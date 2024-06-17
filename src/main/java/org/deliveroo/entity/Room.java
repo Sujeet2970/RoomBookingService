@@ -21,7 +21,7 @@ public class Room {
         return true;
     }
 
-    public String reserve(String startTime, String endTime) {
+    public synchronized String reserve(String startTime, String endTime) {
         Reservation reservation = new Reservation(startTime, endTime, id);
         reservations.add(reservation);
         return reservation.getReservationId();
